@@ -1,11 +1,12 @@
 import React from 'react'
+import FreshDeliveryPromo from './components/HeroSection';
 
 const App = () => {
   return ( 
     <div>
-       <h1 className="text-8xl text-red-500">Food Delivery</h1>
+      <FreshDeliveryPromo />
     </div>
   )
 }
-
+ 
 export default App
