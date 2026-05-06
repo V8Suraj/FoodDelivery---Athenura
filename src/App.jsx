@@ -1,4 +1,8 @@
-import React, { useState } from 'react'
+// <<<<<<< FoodItemsListed
+import React from 'react'
+import Mainbodycontainer from './mainbodycontainer'
+
+// =======
 import { Routes, Route } from 'react-router-dom'
 import Herosection from './components/HeroSection';
 import Navbar from './components/Navbar'; 
@@ -7,11 +11,13 @@ import Cart from './components/Cart';
 const Home = () => (
   <div>
     <Herosection />
+  <Mainbodycontainer />
   </div>
 )
   
 function App() {
   const [isCartOpen, setIsCartOpen] = useState(false);
+// >>>>>>> main
 
   return (
     <div>
