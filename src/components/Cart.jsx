@@ -40,13 +40,11 @@ const CartDrawer = ({ isOpen, onClose, onCheckout }) => {
     }
   ]);
 
-  const [saveForLater, setSaveForLater] = useState([]);
   const [couponCode, setCouponCode] = useState('');
   const [discount, setDiscount] = useState(0);
   const [shippingCost, setShippingCost] = useState(10);
  
   const subtotal = cartItems.reduce((total, item) => total + (item.price * item.quantity), 0);
-   
   const total = subtotal - discount + shippingCost;
 
   // Update quantity
@@ -59,16 +57,6 @@ const CartDrawer = ({ isOpen, onClose, onCheckout }) => {
  
   const removeItem = (id) => {
     setCartItems(cartItems.filter(item => item.id !== id));
-  };
- 
-  const moveToSaveForLater = (item) => {
-    setCartItems(cartItems.filter(i => i.id !== item.id));
-    setSaveForLater([...saveForLater, item]);
-  };
- 
-  const moveToCart = (item) => {
-    setSaveForLater(saveForLater.filter(i => i.id !== item.id));
-    setCartItems([...cartItems, item]);
   };
  
   const applyCoupon = () => {
@@ -152,7 +140,7 @@ const CartDrawer = ({ isOpen, onClose, onCheckout }) => {
         <div className="flex flex-col h-[calc(100%-70px)]">
           {/* Cart Items - Scrollable */}
           <div className="flex-1 overflow-y-auto p-4">
-            {cartItems.length === 0 && saveForLater.length === 0 ? (
+            {cartItems.length === 0 ? (
               // Empty Cart State
               <div className="flex flex-col items-center justify-center h-full text-center">
                 <svg className="w-24 h-24 text-gray-300 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -218,61 +206,18 @@ const CartDrawer = ({ isOpen, onClose, onCheckout }) => {
                             </button>
                           </div>
                           
-                          <div className="flex gap-2">
-                            <button
-                              onClick={() => moveToSaveForLater(item)}
-                              className="text-xs text-blue-500 hover:text-blue-600 transition-colors"
-                            >
-                              Save
-                            </button>
-                            <button
-                              onClick={() => removeItem(item.id)}
-                              className="text-xs text-red-500 hover:text-red-600 transition-colors"
-                            >
-                              Remove
-                            </button>
-                          </div>
+                          {/* Remove Button Only */}
+                          <button
+                            onClick={() => removeItem(item.id)}
+                            className="text-xs text-red-500 hover:text-red-600 transition-colors"
+                          >
+                            Remove
+                          </button>
                         </div>
                       </div>
                     </div>
                   ))}
                 </div>
- 
-                {saveForLater.length > 0 && (
-                  <div className="mt-6 pt-4 border-t border-gray-200">
-                    <h3 className="text-sm font-semibold text-gray-700 mb-3">
-                      Save for Later ({saveForLater.length})
-                    </h3>
-                    <div className="space-y-3">
-                      {saveForLater.map((item) => (
-                        <div key={item.id} className="flex gap-3">
-                          <div className="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                            <svg className="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
-                            </svg>
-                          </div>
-                          <div className="flex-1">
-                            <div className="flex justify-between">
-                              <div>
-                                <p className="text-sm font-medium text-gray-800">{item.name}</p>
-                                <p className="text-xs text-gray-500">{item.brand}</p>
-                              </div>
-                              <div className="text-right">
-                                <p className="text-sm font-bold text-gray-800">${item.price}</p>
-                                <button
-                                  onClick={() => moveToCart(item)}
-                                  className="text-xs text-blue-500 hover:text-blue-600"
-                                >
-                                  Move to Cart
-                                </button>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                )}
               </>
             )}
           </div>
