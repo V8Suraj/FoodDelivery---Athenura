@@ -1,9 +1,11 @@
 import React from 'react'
+import Mainbodycontainer from './mainbodycontainer'
+
 
 const App = () => {
   return ( 
     <div>
-       <h1 className="text-8xl text-red-500">Food Delivery</h1>
+       <Mainbodycontainer/>
     </div>
   )
 }
