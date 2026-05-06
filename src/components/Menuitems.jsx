@@ -12,14 +12,10 @@ const Menuitems = () => {
       <p className="text-gray-500 mb-6 text-lg md:text-xl text-center">
         Choose from a diverse menu featuring a delectable array of dishes.
       </p>
-
-      {/* IMPORTANT: wrapper */}
       <div className="relative w-full overflow-hidden cursor-pointer">
-        
-        {/* Moving Track */}
         <div className="flex gap-8 w-max animate-scroll">
           
-          {/* Here the array is trippled copy  */}
+          {/* Here the array is trippled copy why ? because of animationm and moving motion*/}
           {[...menuitemsdata, ...menuitemsdata, ...menuitemsdata,...menuitemsdata].map((item, index) => (
             <div key={index} className="flex flex-col items-center min-w-[120px]">
               
