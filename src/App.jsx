@@ -10,14 +10,14 @@ const Home = () => (
   </div>
 )
   
-const App = () => {
+function App() {
   const [isCartOpen, setIsCartOpen] = useState(false);
 
-  return ( 
+  return (
     <div>
       <Navbar onCartClick={() => setIsCartOpen(true)} />
       <Routes>
-        <Route path="/" element={<Home />} /> 
+        <Route path="/" element={<Home />} />
         {/* <Route path="/about" element={<About />} /> */}
         {/* <Route path="/products" element={<Products />} /> */}
         {/* <Route path="/offers" element={<Offers />} /> */}
@@ -28,18 +28,17 @@ const App = () => {
         {/* <Route path="/orders" element={<Orders />} /> */}
         {/* <Route path="/settings" element={<Settings />} /> */}
       </Routes>
-       
+
       <Cart
-        isOpen={isCartOpen} 
+        isOpen={isCartOpen}
         onClose={() => setIsCartOpen(false)}
         onCheckout={() => {
-          console.log('Proceeding to checkout'); 
+          console.log('Proceeding to checkout');
           // navigate('/checkout');
           setIsCartOpen(false);
-        }}
-      />
+        } } />
     </div>
-  )
+  );
 }
  
 export default App
