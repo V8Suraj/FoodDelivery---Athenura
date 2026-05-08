@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom'
 import Herosection from './components/HeroSection';
 import Navbar from './components/Navbar'; 
 import Cart from './components/Cart';
+import Footer from './components/Footer';
  
 const Home = () => (
   <div>
@@ -37,6 +38,8 @@ function App() {
           // navigate('/checkout');
           setIsCartOpen(false);
         } } />
+
+        <Footer />
     </div>
   );
 }
