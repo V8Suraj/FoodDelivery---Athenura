@@ -4,9 +4,10 @@ export const data = {
       id: "R1001",
       name: "Pizza Paradise",
       location: "Koramangala, Bangalore",
-      rating: 4.5,
+      rating: "★★★★☆ 4.2",
       deliveryTime: "30-35 mins",
       costForTwo: 600,
+      descriptions: "Delicious wood-fired pizzas with fresh ingredients.",
       image:
         "https://b.zmtcdn.com/data/pictures/8/20344648/37f907e3d497a2c1d7f016f8ec406d64.jpg",
       menu: [
@@ -116,9 +117,10 @@ export const data = {
       id: "R1002",
       name: "Curry House",
       location: "Connaught Place, New Delhi",
-      rating: 4.7,
+     rating: "★★★★★ 5.0",
       deliveryTime: "40-45 mins",
       costForTwo: 800,
+      descriptions: "Authentic Indian curries with rich flavors.",
       image:
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR82v7Ih6gEJTFidNQXN7BdRLt5bfD3kx8SLg&s",
       menu: [
@@ -229,9 +231,10 @@ export const data = {
       id: "R1003",
       name: "Burger Hub",
       location: "Bandra West, Mumbai",
-      rating: 4.3,
+      rating: "★★★★★ 5.0",
       deliveryTime: "25-30 mins",
       costForTwo: 500,
+      descriptions: "Juicy burgers with a variety of toppings and sauces.",
       image:
         "https://b.zmtcdn.com/data/pictures/1/20620911/acda6310b11cbd0c5efc7787706ef314.jpg",
       menu: [
@@ -341,9 +344,10 @@ export const data = {
       id: "R1004",
       name: "Sushi Zen",
       location: "Jubilee Hills, Hyderabad",
-      rating: 4.8,
+      rating: "★★★★☆ 4.2",
       deliveryTime: "45-50 mins",
       costForTwo: 1200,
+      descriptions:"Authentic Japanese sushi, sashimi, and ramen served fresh with premium ingredients.",
       image:
         "https://platform.ny.eater.com/wp-content/uploads/sites/6/chorus/uploads/chorus_asset/file/15711416/sushizen.0.0.1539991655.jpg?quality=90&strip=all&crop=12.5,0,75,100",
       menu: [
@@ -454,9 +458,10 @@ export const data = {
       id: "R1005",
       name: "The Sweet Spot",
       location: "Salt Lake, Kolkata",
-      rating: 4.6,
+     rating: "★★★★☆ 4.2",
       deliveryTime: "20-25 mins",
       costForTwo: 400,
+      descriptions: "Decadent desserts and sweet treats to satisfy your cravings.",
       image:
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQw4CyoOeamz4J0vIi2gZknTnY1Gvog8KnL1A&s",
       menu: [

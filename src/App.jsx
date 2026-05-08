@@ -1,29 +1,27 @@
 // <<<<<<< FoodItemsListed
-import React from 'react'
-import Mainbodycontainer from './mainbodycontainer'
-
+import React, { useState } from 'react'
 // =======
 import { Routes, Route } from 'react-router-dom'
-import Herosection from './components/HeroSection';
 import Navbar from './components/Navbar'; 
 import Cart from './components/Cart';
- 
-const Home = () => (
-  <div>
-    <Herosection />
-  <Mainbodycontainer />
-  </div>
-)
+import TopRestaurant from './components/TopRestaurant';
+import RestaurantMenu from './components/RestaurantMenu';
+import  Homee from './components/Homee';
+import Login from './components/Login';
+
+
   
 function App() {
   const [isCartOpen, setIsCartOpen] = useState(false);
 // >>>>>>> main
+  // ✅ localStorage check
+  const user = localStorage.getItem('user');
 
   return (
     <div>
-      <Navbar onCartClick={() => setIsCartOpen(true)} />
+      {user &&<Navbar onCartClick={() => setIsCartOpen(true)} />}
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={user ? <Homee /> : <Login />} />
         {/* <Route path="/about" element={<About />} /> */}
         {/* <Route path="/products" element={<Products />} /> */}
         {/* <Route path="/offers" element={<Offers />} /> */}
@@ -33,16 +31,20 @@ function App() {
         {/* <Route path="/profile" element={<Profile />} /> */}
         {/* <Route path="/orders" element={<Orders />} /> */}
         {/* <Route path="/settings" element={<Settings />} /> */}
+        <Route path="/restaurant" element={user ? <TopRestaurant/> : <Login/> } />
+        <Route path="/restaurant/:id" element={user ?<RestaurantMenu /> : <Login/>} />
       </Routes>
 
-      <Cart
+      {user && (<Cart
         isOpen={isCartOpen}
         onClose={() => setIsCartOpen(false)}
         onCheckout={() => {
           console.log('Proceeding to checkout');
           // navigate('/checkout');
           setIsCartOpen(false);
-        } } />
+        }} 
+        />
+        )}
     </div>
   );
 }

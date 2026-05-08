@@ -36,7 +36,7 @@ const TopDishes = () => {
             className="bg-white rounded-xl shadow-md hover:shadow-lg transition overflow-hidden flex flex-col"
             style={{ width: "320px" }}
           >
-            {/* IMAGE */}
+            {/* Images section done fetching from - random image address staticly */}
             <div className="relative">
               <img
                 src={item.src}
@@ -44,7 +44,7 @@ const TopDishes = () => {
                 className="w-full h-[220px] object-cover"
               />
 
-              {/* COUNTER CONTROLS ON IMAGE */}
+              {/* COUNTER CONTROLS ON IMAGE counter + - */}
               <div className="absolute bottom-3 right-3 flex items-center gap-2 bg-white px-2 py-1 rounded-full shadow-lg">
                 {/* Minus Button (Sirf tab dikhega jab count > 0 ho) */}
                 {counts[item.id] > 0 && (
@@ -61,7 +61,7 @@ const TopDishes = () => {
                   </>
                 )}
 
-                {/* Plus Button */}
+                
                 <button
                   onClick={() => handleIncrement(item.id)}
                   className="bg-green-500 text-white w-8 h-8 rounded-full flex items-center justify-center text-lg cursor-pointer hover:bg-green-600 transition"
